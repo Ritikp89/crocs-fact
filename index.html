@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <ul id="facts-list"></ul>
+        <button id="generate-fact">Generate Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles have existed for over 200 million years, making them one of the oldest living species on Earth.",
+            "Crocodiles are ectothermic (cold-blooded), meaning they rely on external sources to regulate their body temperature.",
+            "They have one of the strongest bites in the animal kingdom, with a bite force that can exceed 3,700 pounds per square inch.",
+            "Crocodiles have a special membrane that protects their eyes while underwater, allowing them to see clearly while hunting.",
+            "They communicate using a variety of sounds, including hissing, growling, and even bellowing, especially during mating season.",
+            "Unlike many reptiles, crocodiles exhibit parental care, with mothers often guarding their nests and helping hatchlings reach the water.",
+            "Crocodiles are opportunistic feeders and can eat a wide range of prey, including fish, birds, and mammals.",
+            "Their skin coloration helps them blend into their surroundings, making them effective ambush predators.",
+            "Crocodiles can live for several decades, with some species known to live over 70 years in the wild.",
+            "There are around 15 different species of crocodiles, including the Nile crocodile, saltwater crocodile, and American crocodile, each adapted to different environments."
+        ];
+
+        document.getElementById('generate-fact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factItem = document.createElement('li');
+            factItem.textContent = facts[randomIndex];
+            document.getElementById('facts-list').appendChild(factItem);
+        });
+    </script>
+</body>
+</html>
